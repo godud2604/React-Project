@@ -26,7 +26,6 @@ const H2 = css`
 const SubTitle1 = css`
   font-size: ${fontSizes.SubTitle1};
   font-family: NotoB;
-  font-weight: 700;
 `;
 
 const SubTitle2 = css`
