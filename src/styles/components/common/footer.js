@@ -10,6 +10,7 @@ export const Container = styled.section`
   color: ${theme.colors.grey1};
   background: ${theme.colors.white};
   filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.1));
+  z-index: 25;
 
   .footer-nav {
     display: flex;
@@ -18,6 +19,7 @@ export const Container = styled.section`
     flex-direction: column;
     flex: 1;
     height: 56px;
+    text-decoration: none;
     background-color: ${theme.colors.boxGray};
     cursor: pointer;
 
@@ -32,7 +34,6 @@ export const Container = styled.section`
     &-txt {
       color: ${theme.colors.gray3};
       text-align: center;
-      text-decoration: none;
 
       &.is-active {
         color: ${theme.colors.orange};

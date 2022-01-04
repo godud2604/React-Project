@@ -14,7 +14,7 @@ const Footer = () => {
 
   return (
     <Container>
-      <div className='footer-nav'>
+      <Link to='/' className='footer-nav'>
         <div className="svg">
           <Home
             width="20"
@@ -22,9 +22,9 @@ const Footer = () => {
             fill={`${theme.colors.orange}`}
           />
         </div>
-        <Link to='/' className='footer-nav-txt is-active'>홈</Link>
-      </div>
-      <div className='footer-nav'>
+        <div className='footer-nav-txt is-active'>홈</div>
+      </Link>
+      <Link to='/order' className='footer-nav'>
         <div className="svg">
           <Coupon
             width="20"
@@ -32,9 +32,9 @@ const Footer = () => {
             fill={`${theme.colors.gray3}`}
           />
         </div>
-        <Link to='/coupon' className='footer-nav-txt'>주문</Link>
-      </div>
-      <div className='footer-nav'>
+        <div className='footer-nav-txt'>주문</div>
+      </Link>
+      <Link to='/gift' className='footer-nav'>
         <div className="svg">
           <Gift
             width="20"
@@ -42,9 +42,9 @@ const Footer = () => {
             fill={`${theme.colors.gray3}`}
           />
         </div>
-        <Link to='/gift' className='footer-nav-txt'>선물</Link>
-      </div>
-      <div className='footer-nav'>
+        <div className='footer-nav-txt'>선물</div>
+      </Link>
+      <Link to='/coupon' className='footer-nav'>
         <div className="svg">
           <Order
             width="20"
@@ -52,8 +52,8 @@ const Footer = () => {
             fill={`${theme.colors.gray3}`}
           />
         </div>
-        <Link to='/order' className='footer-nav-txt'>쿠폰</Link>
-      </div>
+        <div className='footer-nav-txt'>쿠폰</div>
+      </Link>
       <div className='footer-nav'>
         <div className="svg">
           <More

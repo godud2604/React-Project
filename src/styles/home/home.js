@@ -7,28 +7,22 @@ export const Container = styled.div`
 `
 
 export const MainSection = styled.div`
-  position: fixed;
+  position: sticky;
   top: 0;
-  width: 100%;
-  height: 364px;
-  background-image: url(${mainBg});
-  background-repeat: no-repeat;
-  background-size: 100%;
-  z-index: -1;
-
-  // 이미지 선명하게
-  image-rendering: pixelated;
-  transform: translateZ(0);
-  backface-visibility: hidden;
 
   .main-txt-wrap {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
-    margin-top: 10px;
     padding-left: 30px;
     color: ${theme.colors.white};
+    width: 100%;
+    height: 364px;
+
+    background-image: url(${mainBg});
+    background-repeat: no-repeat;
+    background-size: cover;
 
     .title {
       margin-bottom: 25px;
@@ -42,16 +36,61 @@ export const MainSection = styled.div`
   }
 
   .main-btn {
-    margin-top: 10px;
+    margin: 20px 0;
     padding: 0 20px;
+  }
+
+  // swiper
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .home-swiper {
+    height: 364px;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+
+  .swiper-pagination-lock {
+    display: block;
+    top: 300px;
+  }
+
+  .swiper-pagination {
+    position: absolute;
+    left: auto;
+    right: 20px;
+    bottom: 20px;
+    display: inline-block;
+    width: auto;
+    padding: 8px 8px 6px;
+    color: ${theme.colors.white};
+    border-radius: 50px;
+    background: rgba(0,0,0, .5);
+
+    span {
+      ${theme.SubTitle2};
+    }
   }
 `;
 
 export const ScrollSection = styled.div`
+  position: relative;
   width: 100%;
-  margin-top: 440px;
   padding: 20px 20px 100px;
   background-color: ${theme.colors.white};
+  z-index: 20;
 
   .starbucks {
     display: flex;
@@ -78,6 +117,7 @@ export const ScrollSection = styled.div`
 
     .sub-txt {
       ${theme.SubTitle1};
+      font-weight: 700;
     }
   }
 

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Container } from '../../../styles/components/common/header';
+import { NavContainer } from '../../../styles/components/common/header';
 import { Button } from '../modal';
 
 const HeaderNav = ({ headerKind }) => {
   return (
-    <Container className={headerKind ? headerKind : ''}>
+    <NavContainer className={headerKind ? headerKind : ''}>
       <nav>
         <ul className='nav-list'>
           <li className='nav-item is-active'>먹플</li>
@@ -21,7 +21,7 @@ const HeaderNav = ({ headerKind }) => {
           children={'가이드'}
         />
       </div>
-    </Container>
+    </NavContainer>
   );
 };
 

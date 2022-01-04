@@ -4,6 +4,9 @@ import Route from './routes/FrontRoute'
 // css
 import theme from "./styles/theme";
 import GlobalStyle from "./styles/globalStyle";
+import "swiper/css";
+import "swiper/css/pagination"
+import "swiper/css/navigation"
 
 const App = () => {
 

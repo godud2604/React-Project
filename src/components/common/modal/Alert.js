@@ -1,6 +1,4 @@
 import React from 'react';
-import CopyToClipboard from 'react-copy-to-clipboard';
-import { useSelector } from 'react-redux';
 // css
 import styled from 'styled-components';
 import theme from '../../../styles/theme';
@@ -9,9 +7,11 @@ const Alert = ({
   sub1,
   sub2,
   sub3,
-  agreeTxt1,
+  btnTxt1,
+  btnTxt2,
   onClick1,
   onClick2,
+  bgClick, // 배경 클릭 시, 모달 닫히게
   img,
 
   // css
@@ -24,7 +24,7 @@ const Alert = ({
   btnColor,
   btnBackColor,
 }) => {
-  const copyurl = useSelector((store) => store.header.copyurl);
+  
   return (
     <StyledModal
       className={kind}
@@ -35,13 +35,16 @@ const Alert = ({
       width={width}
       height={height}
       padding={padding}
-      agreeTxt1={agreeTxt1}
+      btnTxt1={btnTxt1}
+      btnTxt2={btnTxt2}
+      
+      onClick={bgClick}
     >
       <div className={'shadow-modal'}>
         <div className="text">
           {img && (
             <div className="img">
-              <img src={img} />
+              <img src={img} alt="모달 이미지" />
             </div>
           )}
 
@@ -58,11 +61,19 @@ const Alert = ({
         <div className="button">
           {(kind === 'alert-1' || kind === 'alert-3') && (
             <React.Fragment>
-              <button type="button" onClick={onClick1}>
-                취소
+              <button 
+                type="button"
+                className='btn1' 
+                onClick={onClick1}
+              >
+                {btnTxt1 ? btnTxt1 : '취소'}
               </button>
-              <button type="button" onClick={onClick2}>
-                {agreeTxt1 ? agreeTxt1 : '확인'}
+              <button
+               type="button"
+               className="btn2" 
+               onClick={onClick2}
+              >
+                {btnTxt2 ? btnTxt2 : '확인'}
               </button>
             </React.Fragment>
           )}
@@ -71,22 +82,9 @@ const Alert = ({
               확인
             </button>
           )}
-
-          {(kind === 'copy') && (
-            <React.Fragment>
-              <button type="button" onClick={onClick1}>
-                취소
-              </button>
-              <CopyToClipboard text={copyurl} >
-                <button type="button" onClick={onClick2}>
-                  {agreeTxt1 ? agreeTxt1 : '확인'}
-                </button>
-              </CopyToClipboard>
-            </React.Fragment>
-          )}
         </div>
       </div>
-    </StyledModal >
+    </StyledModal>
   );
 };
 
@@ -100,16 +98,21 @@ const StyledModal = styled.div`
   bottom: 0;
   width: 100vw;
   height: 100vh;
+  padding: 0 20px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+ 
   background-color: rgba(0, 0, 0, 0.4);
-  z-index: 99;
+  z-index: 999;
 
   .shadow-modal {
-    width: ${(props) => (props.width ? props.width : `292px`)};
-    border-radius: 3px;
+    width: 100%;
+    min-height: 189px;
     overflow: hidden;
+    border-radius: 20px;
+    background: ${theme.colors.white};
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
   }
 
@@ -125,17 +128,16 @@ const StyledModal = styled.div`
   }
 
   h2 {
-    ${theme.H5};
+    ${theme.H2};
     color: ${theme.colors.black1};
-    font-size: 17px;
 
     &.alert-title {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
   }
 
   p {
-    ${theme.Title};
+    ${theme.Body1};
     color: ${theme.colors.grey2};
     word-break: keep-all; // 단어 단위로 줄바꿈
 
@@ -149,28 +151,14 @@ const StyledModal = styled.div`
     height: 100%;
 
     button {
-      height: 40px;
-      padding: ${(props) => props.agreeTxt1 ? '0 22px 0 0' : 'auto'};
+      padding: 8px 15px 7px;
       ${theme.Title};
       color: ${(props) => (props.btnColor ? props.btnColor : `${theme.colors.white}`)};
       background: ${(props) =>
     props.btnBackColor ? props.btnBackColor : `${theme.colors.lavender}`};
-      border: none;
+      border-radius: 20px;
       outline: none;
     }
   }
 
-  @media (max-width: 1020px) {
-    .button {
-      background: ${theme.colors.white};
-    }
-  }
-
-  @media (min-width: 1020px) {
-    .button {
-      button {
-        padding: ${(props) => props.agreeTxt1 ? '0' : 'auto'};
-      }
-    }
-  }
 `;

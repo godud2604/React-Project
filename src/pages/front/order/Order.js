@@ -1,10 +1,11 @@
 import React from 'react';
+import MainLayout from '../../../components/common/layout/front/MainLayout';
 
 const Order = () => {
   return (
-    <div>
+    <MainLayout>
       주문
-    </div>
+    </MainLayout>
   );
 };
 

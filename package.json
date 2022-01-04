@@ -18,11 +18,12 @@
     "redux-thunk": "^2.4.1",
     "styled-components": "^5.3.3",
     "styled-reset": "^4.3.4",
+    "swiper": "^7.4.1",
     "web-vitals": "^2.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "CI= react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

@@ -1,10 +1,11 @@
 import React from 'react';
+import MainLayout from '../../../components/common/layout/front/MainLayout';
 
 const Gift = () => {
   return (
-    <div>
+    <MainLayout>
       선물
-    </div>
+    </MainLayout>
   );
 };
 

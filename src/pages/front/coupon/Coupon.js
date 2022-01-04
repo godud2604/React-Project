@@ -1,10 +1,11 @@
 import React from 'react';
+import MainLayout from '../../../components/common/layout/front/MainLayout';
 
 const Coupon = () => {
   return (
-    <div>
+    <MainLayout>
       쿠폰입니다
-    </div>
+    </MainLayout>
   );
 };
 

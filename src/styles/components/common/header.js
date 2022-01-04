@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import theme from "../../theme";
 
-export const Container = styled.section`
+export const NavContainer = styled.section`
   position: fixed;
   top: 0;
   display: flex;
@@ -13,6 +13,7 @@ export const Container = styled.section`
   color: ${theme.colors.white};
   background-color: ${(props) => props.bgColor ? props.bgColor : 'rgba(255,255,255,0)'};
   transition: all 100ms ease-in-out;
+  z-index: 30;
 
   // props > headerKind (scroll 시, header 변경)
   &.header-white {
@@ -44,5 +45,27 @@ export const Container = styled.section`
 
   .header-btn {
     margin-bottom: 2px;
+  }
+`;
+
+export const BackContainer = styled.section`
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 68px;
+
+  .btn-back-svg {
+    position: absolute;
+    top: 18px;
+    left: 27px;
+  }
+
+  .btn-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    ${theme.H2};
+    color: ${theme.colors.gray2};
   }
 `;
