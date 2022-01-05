@@ -13,39 +13,39 @@ const fontSizes = {
 
 const H1 = css`
   font-size: ${fontSizes.H1};
-  font-family: NotoB;
+  font-family: 'NotoB';
   font-weight: 700;
 `;
 
 const H2 = css`
   font-size: ${fontSizes.H2};
-  font-family: NotoB;
+  font-family: 'NotoB';
   font-weight: 700;
 `;
 
 const SubTitle1 = css`
   font-size: ${fontSizes.SubTitle1};
-  font-family: NotoB;
+  font-family: 'NotoB';
 `;
 
 const SubTitle2 = css`
   font-size: ${fontSizes.SubTitle2};
-  font-family: NotoB;
+  font-family: 'NotoB';
 `;
 
 const Body1 = css`
   font-size: ${fontSizes.Body1};
-  font-family: NotoR;
+  font-family: 'NotoR';
 `;
 
 const Body2 = css`
   font-size: ${fontSizes.Body2};
-  font-family: NotoR;
+  font-family: 'NotoR';
 `;
 
 const Caption = css`
   font-size: ${fontSizes.Caption};
-  font-family: NotoB;
+  font-family: 'NotoR';
 `;
 
 // colors
@@ -55,7 +55,7 @@ const colors = {
   gray1: 'rgb(55,56,56)',
   gray2: 'rgb(77,77,78)',
   gray3: '#828282',
-  gray4: '#BDBDBD',
+  gray4: '#E3E3E3',
   gray6: '#F2F2F2',
   midGray: 'rgb(248,248,248)',
   lightGray: 'rgb(252,252,252)',
@@ -64,6 +64,8 @@ const colors = {
   yellow: '#FFBF00',
   pink1: '#E83F6F',
   pink2: '#F49FB7',
+  red: '#EB5757',
+  blue2: '#2D9CDB',
   white: 'rgb(255,255,255)',
 };
 

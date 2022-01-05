@@ -1,6 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
+// 개발자 라이브러리
 import theme from '../../../styles/theme';
+// css
+import { GlobalInput } from '../../../styles/components/common/input/input';
+// images
+import { ReactComponent as Error } from '../../../images/common/check-error.svg';
+import { ReactComponent as Success } from '../../../images/common/check-success.svg';
 
 const Input = ({
   type,
@@ -8,176 +13,86 @@ const Input = ({
   value,
   kind,
 
-  onClickHandler,
+  onClick,
   onChange,
-  RefInput,
+  ref,
   readOnly,
   required,
   maxLength,
   minLength,
-  patten,
-  pattenMessage,
 
-  error,
-  placeholderIcon,
-  placeholderImg,
-  titleName,
-  titleRequired,
+  title,
   placeholder,
+  helpMessage,
+  errorMessage,
+  successIcon,
+  errorIcon,
 
   width,
   height,
   margin,
-  wrapMargin,
   padding,
-  borderBottom,
-  borderRedBottom,
-  wrapBorder,
   border,
   borderRadius,
 }) => {
   return (
-    <GlobalInput className={kind ? kind : 'input-ver2-01'}>
-      <StyledInputWrap
-        wrapMargin={wrapMargin}
-        wrapBorder={wrapBorder}
-        borderBottom={borderBottom}
-        borderRedBottom={borderRedBottom}
-        className={error ? 'error input-ver2-wrap' : 'input-ver2-wrap' }
-      >
+    <GlobalInput 
+      className={kind ? kind : 'global-input-01'}
+      margin={margin}
 
-        {titleName && (
-          <p className="input-ver2-title">
-            {titleName}
-            {titleRequired && <strong>*</strong>}
-          </p>
-        )}
-
-        <StyledInput
-          className="input-ver2-place"
+      width={width}
+      height={height}
+      padding={padding}
+      border={border}
+    >
+      <label className='global-input-title'>{title}</label>
+      <div className='global-input-wrap'>
+        <input
+          className="global-input-place"
           type={type ? type : 'text'}
           name={name}
           value={value}
           onChange={onChange}
 
-          onClick={onClickHandler}
-          ref={RefInput}
+          onClick={onClick}
+          ref={ref}
           readOnly={readOnly}
           required={required ? required : true}
           placeholder={placeholder}
-          autoComplete="off"
+          autoComplete="none"
           maxLength={maxLength}
           minLength={minLength}
-          patten={patten}
-          title={pattenMessage}
 
           width={width}
           height={height}
           margin={margin}
           padding={padding}
           border={border}
-          borderRadius={borderRadius}
-        >
-        </StyledInput>
-      
-        { placeholderIcon && (
-          <a id="eyesOn" className="input-ver2-icon">
-            <img src={placeholderImg} />
-          </a>
+          radious={borderRadius}
+        />
+
+        { successIcon && (
+          <div className="global-input-icon">
+            <Success 
+              fill={`${theme.colors.blue2}`}
+            />
+          </div>
         )}
-      </StyledInputWrap>
+        { errorIcon && (
+          <div className="global-input-icon">
+            <Error 
+              fill={`${theme.colors.red}`}
+            />
+          </div>
+        )}
+
+      </div>
+
+      {helpMessage && <span className='help-message message'>{helpMessage}</span>}
+      {errorMessage && <span className='error-message message'>{errorMessage}</span>}
     </GlobalInput>
   );
 };
 
-const GlobalInput = styled.div`
-  .input-ver2-wrap {
-      position: relative;
-    }
-    
-  .input-ver2-icon {
-    display: ${(props) => (props.type === 'text' ? 'none' : 'block')};
-    position: absolute;
-    top: 25px;
-    right: 15px;
-    z-index: 1;
-  }
-
-  .error {
-    font-weight: 500;
-    font-family: NotoM;
-    border: 1px solid ${theme.colors.red};
-
-    p, .input-ver2-place {
-      color: ${theme.colors.red};
-      font-weight: 500;
-      font-family: NotoM;
-    }
-
-    .input-ver2-icon {
-      top: 16px;
-      right: 10px;
-      width: 26px;
-    }
-  }
-`;
-
-const StyledInputWrap = styled.div`
-  display: flex;
-  align-items: center;
-  margin: ${(props) => (props.wrapMargin ? props.wrapMargin : '')};
-  border: ${(props) => (props.wrapBorder ? props.wrapBorder : `1px solid ${theme.colors.grey3}`)};
-  border-bottom: ${(props) => props.borderBottom};
-  border-radius: ${(props) => (props.borderRadius ? props.borderRadius : 'none')};
-
-  &.error {
-    border-bottom: ${(props) => props.borderRedBottom} !important;
-  }
-
-  .input-ver2-title {
-    width: 140px;
-    padding-left: 20px;
-    ${theme.Body2};
-    white-space: nowrap;
-    color: ${theme.colors.grey2};
-    border: none !important;
-
-    strong {
-      color: ${theme.colors.red};   
-    }
-  }
-
-  @media (min-width: 769px) {
-    .input-ver2-title {
-      width: 200px;
-    }
-  }
-`;
-
-const StyledInput = styled.input`
-  display: flex;
-
-  width: ${(props) => props.width ? props.width : '100%'};
-  height: ${(props) => (props.height ? props.height : '60px')};
-  margin: ${(props) => props.margin ? props.margin : ''};
-  padding: ${(props) => props.padding ? props.padding : '0 0 0 20px'};
-  border: ${(props) => props.border ? props.border : ''};
-
-  font-size: 14px;
-  font-family: NotoR;
-  color: ${theme.colors.black1};
-
-  z-index: 1;
-
-  ::placeholder {
-    color: ${theme.colors.grey3};
-    font-size: 14px;
-    font-family: NotoR;
-  }
-
-  img {
-    margin-right: 5px;
-  }
-`;
 
 export default Input;

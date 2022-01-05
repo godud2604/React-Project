@@ -57,7 +57,7 @@ export const BackContainer = styled.section`
   .btn-back-svg {
     position: absolute;
     top: 18px;
-    left: 27px;
+    left: 20px;
   }
 
   .btn-title {

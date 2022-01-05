@@ -7,7 +7,7 @@ import SwiperCore, {
 // 개발자 라이브러리
 import { Alert, Button } from '../../../components/common/modal';
 import HeaderNav from '../../../components/common/header/HeaderNav';
-import Footer from '../../../components/common/footer/Footer';
+import NavBottom from '../../../components/common/footer/NavBottom';
 // css
 import { Container, MainSection, ScrollSection } from '../../../styles/home/home';
 // images
@@ -147,7 +147,7 @@ const Home = ({ logInModal }) => {
           </div>
         </ScrollSection>
       </Container>
-      <Footer />
+      <NavBottom />
 
       {isLogInMadal && (
         <Alert 

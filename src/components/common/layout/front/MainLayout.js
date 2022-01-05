@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import Home from '../../../../pages/front/home/Home';
-import Footer from '../../footer/Footer';
+// components
+import NavBottom from '../../footer/NavBottom';
 import HeaderBack from '../../header/HeaderBack';
 import HeaderNav from '../../header/HeaderNav';
 import Loading from '../../Loading';
+// page
+import Home from '../../../../pages/front/home/Home';
 
-const MainLayout = ({ headerNav, headerBack, footer, children, loading }) => {
+
+const MainLayout = ({ headerNav, headerBack, navBottom, children, loading }) => {
   const [isLogIn, setIsLogIn] = useState(false); // temp
 
   useEffect(() => (
@@ -17,7 +20,7 @@ const MainLayout = ({ headerNav, headerBack, footer, children, loading }) => {
       { !isLogIn ? (
         <Home logInModal />
       ) : (
-        <section>
+        <main>
           {headerNav && (
             <HeaderNav />
           )}
@@ -28,8 +31,8 @@ const MainLayout = ({ headerNav, headerBack, footer, children, loading }) => {
 
           {children}
 
-          {footer && <Footer />}
-        </section>
+          {navBottom && <NavBottom />}
+        </main>
       )}
     </>
   );

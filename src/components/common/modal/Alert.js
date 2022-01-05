@@ -1,7 +1,33 @@
+
+// ******************************************************************************
+//* { isLogInMadal && (
+//*   <Alert 
+//*     kind="alert-1"
+//*     title="먹플 회원전용 서비스"
+//*     sub1="로그인이 필요한 서비스입니다."
+//*     btnTxt1="회원가입"
+//*     btnTxt2="로그인"
+//*     onClick1={(e) => {
+//*       e.stopPropagation(); // ** 버블링현상 방지
+//*       history.push('/signup')
+//*     }}
+//*     onClick2={(e) => {
+//*       e.stopPropagation(); // ** 버블링현상 방지
+//*       history.push('/login')
+//*     }}
+//*     bgClick={() => {
+//*       // 배경 클릭 시, 모달 닫히는 기능
+//*     }}
+//*   />
+//* )}
+//*
+//* ===> bgClick 사용 시, onClick1과 onClick2에 버블링현상 방지 사용해주어야 합니다.
+// *********************************************************************************
+
 import React from 'react';
 // css
-import styled from 'styled-components';
-import theme from '../../../styles/theme';
+import { GlobalAlert } from '../../../styles/components/common/modal/alert';
+
 const Alert = ({
   title,
   sub1,
@@ -11,7 +37,7 @@ const Alert = ({
   btnTxt2,
   onClick1,
   onClick2,
-  bgClick, // 배경 클릭 시, 모달 닫히게
+  bgClick, // 배경 클릭 시, 모달 닫히는 기능
   img,
 
   // css
@@ -26,7 +52,7 @@ const Alert = ({
 }) => {
   
   return (
-    <StyledModal
+    <GlobalAlert
       className={kind}
       titleColor={titleColor}
       btnColor={btnColor}
@@ -38,7 +64,7 @@ const Alert = ({
       btnTxt1={btnTxt1}
       btnTxt2={btnTxt2}
       
-      onClick={bgClick}
+      onClick={bgClick} // 배경 클릭 시, 모달 닫히는 기능
     >
       <div className={'shadow-modal'}>
         <div className="text">
@@ -84,81 +110,9 @@ const Alert = ({
           )}
         </div>
       </div>
-    </StyledModal>
+    </GlobalAlert>
   );
 };
 
 export default Alert;
 
-const StyledModal = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-  padding: 0 20px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
- 
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 999;
-
-  .shadow-modal {
-    width: 100%;
-    min-height: 189px;
-    overflow: hidden;
-    border-radius: 20px;
-    background: ${theme.colors.white};
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-  }
-
-  .img {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-
-  .text {
-    background-color: ${theme.colors.white};
-    padding: ${(props) => (props.padding ? props.padding : '')};
-  }
-
-  h2 {
-    ${theme.H2};
-    color: ${theme.colors.black1};
-
-    &.alert-title {
-      margin-bottom: 10px;
-    }
-  }
-
-  p {
-    ${theme.Body1};
-    color: ${theme.colors.grey2};
-    word-break: keep-all; // 단어 단위로 줄바꿈
-
-    &.sub3 {
-      padding-top: 20px;
-    }
-  }
-
-  .button {
-    width: 100%;
-    height: 100%;
-
-    button {
-      padding: 8px 15px 7px;
-      ${theme.Title};
-      color: ${(props) => (props.btnColor ? props.btnColor : `${theme.colors.white}`)};
-      background: ${(props) =>
-    props.btnBackColor ? props.btnBackColor : `${theme.colors.lavender}`};
-      border-radius: 20px;
-      outline: none;
-    }
-  }
-
-`;

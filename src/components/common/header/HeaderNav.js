@@ -1,6 +1,8 @@
 import React from 'react';
-import { NavContainer } from '../../../styles/components/common/header';
+// components
 import { Button } from '../modal';
+// css
+import { NavContainer } from '../../../styles/components/common/header';
 
 const HeaderNav = ({ headerKind }) => {
   return (

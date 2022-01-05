@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// 개발자 라이브러리
+import theme from '../../../styles/theme';
 // css
 import { Container } from '../../../styles/components/common/footer';
 // images
@@ -8,9 +10,8 @@ import { ReactComponent as Coupon } from '../../../images/common/footer-coupon.s
 import { ReactComponent as Gift } from '../../../images/common/footer-gift.svg';
 import { ReactComponent as Order } from '../../../images/common/footer-order.svg';
 import { ReactComponent as More } from '../../../images/common/footer-more.svg';
-import theme from '../../../styles/theme';
 
-const Footer = () => {
+const NavBottom = () => {
 
   return (
     <Container>
@@ -70,4 +71,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default NavBottom;

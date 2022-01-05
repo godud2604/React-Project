@@ -74,7 +74,7 @@ export const MainSection = styled.div`
     bottom: 20px;
     display: inline-block;
     width: auto;
-    padding: 8px 8px 6px;
+    padding: 6px 8px;
     color: ${theme.colors.white};
     border-radius: 50px;
     background: rgba(0,0,0, .5);
