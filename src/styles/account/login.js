@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import theme from "../theme";
+import theme from "../utils/theme";
 
 export const Container = styled.div`
+  /* common */
   margin-top: 68px;
   padding: 20px;
   color: ${theme.colors.gray1};
@@ -18,7 +19,10 @@ export const Container = styled.div`
   .account-sub {
     ${theme.Body2};
   }
+  /* common end */
+`
 
+export const LoginInner = styled.div`
   .login-input-content {
     margin-bottom: 40px;
   }
@@ -51,8 +55,4 @@ export const Container = styled.div`
       }
     }
   }
-
-  .agree-btn {
-    margin-top: 40px;
-  }
-`
+`;

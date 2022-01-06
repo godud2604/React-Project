@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import mainBg from "../../images/home/main-bg.jpg";
 import scrollBg01 from "../../images/home/scroll-bg-01.jpg";
-import theme from "../theme";
+import theme from "../utils/theme";
 
 export const Container = styled.div`
 `

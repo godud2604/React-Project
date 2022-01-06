@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 // 개발자 라이브러리
-import theme from '../../../styles/theme';
+import theme from '../../../styles/utils/theme';
 // css
 import { BackContainer } from '../../../styles/components/common/header';
 // images

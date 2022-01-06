@@ -1,23 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 // components
 import NavBottom from '../../footer/NavBottom';
 import HeaderBack from '../../header/HeaderBack';
 import HeaderNav from '../../header/HeaderNav';
-import Loading from '../../Loading';
 // page
 import Home from '../../../../pages/front/home/Home';
 
 
 const MainLayout = ({ headerNav, headerBack, navBottom, children, loading }) => {
-  const [isLogIn, setIsLogIn] = useState(false); // temp
-
-  useEffect(() => (
-    loading && <Loading /> // temp
-  ), [loading]);
+  const auth = useSelector((store) => store.auth);
 
   return (
     <>
-      { !isLogIn ? (
+      { !auth.authStatus.isLogIn ? (
         <Home logInModal />
       ) : (
         <main>

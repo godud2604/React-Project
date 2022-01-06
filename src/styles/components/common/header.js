@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import theme from "../../theme";
+import theme from "../../utils/theme";
 
 export const NavContainer = styled.section`
   position: fixed;
@@ -53,6 +53,7 @@ export const BackContainer = styled.section`
   top: 0;
   width: 100%;
   height: 68px;
+  background: ${theme.colors.white};
 
   .btn-back-svg {
     position: absolute;

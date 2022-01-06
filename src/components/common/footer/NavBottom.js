@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 // 개발자 라이브러리
-import theme from '../../../styles/theme';
+import theme from '../../../styles/utils/theme';
+import { logoutRequest } from '../../../redux/actions/auth';
 // css
 import { Container } from '../../../styles/components/common/footer';
 // images
@@ -12,6 +14,7 @@ import { ReactComponent as Order } from '../../../images/common/footer-order.svg
 import { ReactComponent as More } from '../../../images/common/footer-more.svg';
 
 const NavBottom = () => {
+  const dispatch = useDispatch();
 
   return (
     <Container>
@@ -63,7 +66,7 @@ const NavBottom = () => {
             fill={`${theme.colors.gray3}`}
           />
         </div>
-        <div className='footer-nav-txt'>
+        <div className='footer-nav-txt' onClick={() => dispatch(logoutRequest())}>
           더보기
         </div>
       </div>

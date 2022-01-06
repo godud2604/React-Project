@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import theme from "../../../theme";
+import theme from "../../../utils/theme";
 
 export const GlobalInput = styled.div`
   /* common */
@@ -44,6 +44,7 @@ export const GlobalInput = styled.div`
   }
 
   .message {
+    position: absolute;
     line-height: 2.4;
     ${theme.Caption};
     color: ${theme.colors.gray3};
@@ -63,8 +64,8 @@ export const GlobalInput = styled.div`
   
   input[type="password"] {
     font-family: 'pass', 'Roboto', Helvetica, Arial, sans-serif ;
-    font-size: 40px;
-    letter-spacing: -6px;
+    font-size: 25px;
+    letter-spacing: -3px;
 
     &::-webkit-input-placeholder {
       transform: scale(0.77);
@@ -82,4 +83,18 @@ export const GlobalInput = styled.div`
     }
   }
   /* common end */
+
+  /****************************** kind ********************************** */
+
+  /* error */
+  &.global-input-error {
+
+    .global-input-title {
+      color: ${theme.colors.red};
+    }
+
+    .global-input-place {
+      border-color: ${theme.colors.red};
+    }
+  }
 `;

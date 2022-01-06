@@ -34,13 +34,6 @@ const GlobalStyle = createGlobalStyle`
     outline: 0 !important;
   }
 
-  img {    
-    // 이미지 선명하게
-    image-rendering: -webkit-optimize-contrast;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-  }
-
   /* react-bootstrap */
   @media (min-width: 1200px) {
     .col-xl-6 {

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import theme from "../../../theme";
+import theme from "../../../utils/theme";
 
 export const GlobalButton = styled.button`
   /* common  */
@@ -28,7 +28,7 @@ export const GlobalButton = styled.button`
   }
 
   .global-btn-img {
-    width: 25px;
+    width: 20px;
     margin-right: 10px;
   }
 
@@ -37,6 +37,11 @@ export const GlobalButton = styled.button`
     width: 100%;
     height: 100%;
     object-fit: contain;
+
+    // 이미지 선명하게
+    image-rendering: -webkit-optimize-contrast;
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
   :disabled {

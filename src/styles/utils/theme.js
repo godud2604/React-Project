@@ -56,6 +56,7 @@ const colors = {
   gray2: 'rgb(77,77,78)',
   gray3: '#828282',
   gray4: '#E3E3E3',
+  gray5: '#E0E0E0',
   gray6: '#F2F2F2',
   midGray: 'rgb(248,248,248)',
   lightGray: 'rgb(252,252,252)',
@@ -69,6 +70,11 @@ const colors = {
   white: 'rgb(255,255,255)',
 };
 
+const boxShadows = {
+  dropdown: `0 4px 6px rgba(0, 0, 0, 0.18)`,
+  popup: `0 4px 20px rgba(63, 65, 80, 0.3)`,
+  popupReversed: `0 -4px 20px rgba(63, 65, 80, 0.3)`,
+};
 
 const theme = {
   fontSizes,
@@ -81,6 +87,8 @@ const theme = {
   Caption,
 
   colors,
+
+  boxShadows,
 };
 
 export default theme;

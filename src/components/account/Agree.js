@@ -1,6 +1,6 @@
 import React from 'react';
 // 개발자 라이브러리
-import theme from '../../styles/theme';
+import theme from '../../styles/utils/theme';
 // css
 import { Agreement } from '../../styles/account/signup';
 // images

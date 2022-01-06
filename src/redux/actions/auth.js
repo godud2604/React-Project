@@ -14,7 +14,6 @@ import {
 } from './AuthTypes';
 
 import _axios from '../../utils/axios';
-import { accountCertify, accountUserInfo } from './account';
 
 /* *************************** 로그인 ************************************* */
 export function idSave(userId) {
@@ -54,7 +53,7 @@ export function saveDeviceAssort(device) {
   };
 }
 
-export function loginRequest(userName, userHpNo, device, ip) {
+export function loginRequest(userName, userHpNo, device, ip, kakao) {
   
   return (dispatch) => {
     
@@ -71,19 +70,10 @@ export function loginRequest(userName, userHpNo, device, ip) {
     // API REQUEST
     return _axios(url, params)
       .then((response) => {
-        // SUCCEED
-        // console.log(response);
-        // console.log(params);
+        console.log(response);
+        console.log(params);
 
-        dispatch(accountUserInfo(userName, userHpNo, device, ip));
-
-        if (response.certifyStatus === 'N') {
-          // 새로운 기기 인증
-          dispatch(accountCertify(response));
-          dispatch(loginFailure());
-        } else {
-          dispatch(loginSuccess(response));
-        }
+        dispatch(loginSuccess(response));
       })
       .catch((error) => {
         // FAILED

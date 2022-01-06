@@ -5,7 +5,8 @@ import Home from '../pages/front/home/Home';
 import Coupon from '../pages/front/coupon/Coupon';
 import Gift from '../pages/front/gift/Gift';
 import Order from '../pages/front/order/Order';
-import { Login, Signup, FirstAgree, KakaoLogin } from '../pages/front/account';
+
+import { Login, Signup, FirstAgree, KakaoLogin, SignUpComplete } from '../pages/front/account';
 
 function Routes() {
   const { pathname } = useLocation();
@@ -32,6 +33,7 @@ function Routes() {
         <Route path="/signup" component={Signup} />
         <Route path="/agree" component={FirstAgree} />
         <Route path="/kakao" component={KakaoLogin} />
+        <Route path="/complete" component={SignUpComplete} />
 
       </Switch>
     </React.Fragment>
