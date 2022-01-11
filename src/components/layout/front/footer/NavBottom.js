@@ -34,18 +34,18 @@ const NavBottom = () => {
     dispatch(setSideTabStatus(false)); // sidebar 닫기
 
     // TODO: 오류 수정
-    // setState({
-    //   isHome: false,
-    //   isOrder: false,
-    //   isGift: false,
-    //   isCoupon: false,
-    //   isMore: false,
-    // });
+    setState({
+      isHome: false,
+      isOrder: false,
+      isGift: false,
+      isCoupon: false,
+      isMore: false,
+    });
 
-    // setState((prevState) => ({
-    //   ...prevState,
-    //   [navInfo]: true,
-    // }));
+    setState((prevState) => ({
+      ...prevState,
+      [navInfo]: true,
+    }));
   };
   
   return (

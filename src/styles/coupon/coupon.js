@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import theme from "../utils/theme";
-import { flexbox, inlineFlexbox } from "../utils/flexbox";
-
 
 export const Container = styled.div`
   /* common */

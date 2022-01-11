@@ -24,7 +24,8 @@ const OrderSearch = () => {
           backTitle="막창"
         >
           <Container>
-            <SearchInner>
+            {/* setSearch 임시 */}
+            <SearchInner onClick={() => setSearch({ ...search, searchNone: true })}>
               <Search searchBtn />
               <div className='order-search-none'>
                 <span>최근 검색어가 없습니다.</span>
