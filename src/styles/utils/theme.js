@@ -71,10 +71,23 @@ const colors = {
 };
 
 const boxShadows = {
-  dropdown: `0 4px 6px rgba(0, 0, 0, 0.18)`,
-  popup: `0 4px 20px rgba(63, 65, 80, 0.3)`,
-  popupReversed: `0 -4px 20px rgba(63, 65, 80, 0.3)`,
+  dropShadow: `drop-shadow(0px -4px 15px rgba(0, 0, 0, 0.1))`,
 };
+
+
+// 10 단위로 지정하되, 예외 변수가 발생하면 1 단위 값 설정
+const zIndex = {
+  header_nav_level: 30,
+  header_back_level: 30,
+
+  home_level: 20,
+
+  footer_level: 60,
+  
+  sidebar_level: 50, // 더보기 첫 번째 화면
+  sidebar_sub_level: 70, // 더보기 환경설정, 내정보
+  alert_level: 100,
+}
 
 const theme = {
   fontSizes,
@@ -89,6 +102,8 @@ const theme = {
   colors,
 
   boxShadows,
+
+  zIndex,
 };
 
 export default theme;

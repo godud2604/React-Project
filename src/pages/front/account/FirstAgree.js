@@ -1,9 +1,9 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 // components
-import Agree from '../../../components/account/Agree';
-import HeaderBack from '../../../components/common/header/HeaderBack';
-import { Button } from '../../../components/common/modal';
+import { Agree } from '../../../components/agree';
+import { HeaderBack } from '../../../components/layout/front/header';
+import { Button } from '../../../components/modal';
 // css
 import { Container, FirstAgreeInner } from '../../../styles/account/signup';
 

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 // components
-import HeaderBack from '../../../components/common/header/HeaderBack';
-import { Input } from '../../../components/common/input';
-import { Button } from '../../../components/common/modal';
+import { HeaderBack } from '../../../components/layout/front/header';
+import { Input } from '../../../components/input';
+import { Button } from '../../../components/modal';
 // 개발자 라이브러리
 import { handleInputChange } from '../../../utils/input';
 import { idSave, init, loginRequest } from '../../../redux/actions/auth';
@@ -14,8 +14,10 @@ import { Container, LoginInner } from '../../../styles/account/login';
 import kakao from '../../../images/common/kakao.png';
 
 const Login = () => {
+  
   const history = useHistory();
   const dispatch = useDispatch();
+  const prev_pathname = useSelector((store) => store.auth.saveUrl); // home 로그인 모달 창 > 로그인 버튼 클릭 시, prev_pathname 저장
 
   const auth = useSelector((store) => store.auth);
   const storageData = localStorage.getItem('userId');
@@ -54,7 +56,7 @@ const Login = () => {
     // 로그인 정상
     if (login_status === 'SUCCESS') {
       history.push({
-        pathname:'/',
+        pathname: prev_pathname ? `${prev_pathname}` : '/',
       });
 
     // 로그인 실패

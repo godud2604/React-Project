@@ -90,7 +90,7 @@ export const ScrollSection = styled.div`
   width: 100%;
   padding: 20px 20px 100px;
   background-color: ${theme.colors.white};
-  z-index: 20;
+  z-index: ${theme.zIndex.home_level};
 
   .starbucks {
     display: flex;

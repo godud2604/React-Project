@@ -1,23 +1,27 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {
   Pagination, Navigation, Autoplay
 } from 'swiper';
-// 개발자 라이브러리
-import { Alert, Button } from '../../../components/common/modal';
-import HeaderNav from '../../../components/common/header/HeaderNav';
-import NavBottom from '../../../components/common/footer/NavBottom';
+// components
+import { NavBottom } from '../../../components/layout/front/footer';
+import { Alert, Button } from '../../../components/modal';
+import { HeaderNav } from '../../../components/layout/front/header';
+
 // css
 import { Container, MainSection, ScrollSection } from '../../../styles/home/home';
 // images
 import bell from '../../../images/common/gray-bell.svg';
 import scrollBg02 from '../../../images/home/scroll-bg-02.jpg';
 import scrollBg03 from '../../../images/home/scroll-bg-03.jpg';
+import { saveUrl } from '../../../redux/actions/auth';
 
-const Home = ({ logInModal }) => {
+const Home = ({ logInModal, prevPathName }) => {
   SwiperCore.use([ Pagination, Navigation, Autoplay]);
-  
+
+  const dispatch = useDispatch();
   const history = useHistory();
   const scrollRef = useRef(null);
   const [state, setState] = useState({
@@ -158,13 +162,26 @@ const Home = ({ logInModal }) => {
           btnTxt2="로그인"
           onClick1={(e) => {
             e.stopPropagation(); // 버블링현상 방지
+            setState({
+              ...state,
+              isLogInMadal: false,
+            });
             history.push('/signup')
           }}
           onClick2={(e) => {
             e.stopPropagation(); // 버블링현상 방지
+            setState({
+              ...state,
+              isLogInMadal: false,
+            });
+            dispatch(saveUrl(prevPathName));
             history.push('/login')
           }}
           bgClick={() => {
+            setState({
+              ...state,
+              isLogInMadal: false,
+            });
             history.push('/');
           }}
         />

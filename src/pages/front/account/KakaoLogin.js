@@ -1,10 +1,10 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 // components
-import { Input, InputBtn } from '../../../components/common/input';
-import { Button } from '../../../components/common/modal';
-import Agree from '../../../components/account/Agree';
-import HeaderBack from '../../../components/common/header/HeaderBack';
+import { Input, InputBtn } from '../../../components/input';
+import { Button } from '../../../components/modal';
+import { Agree } from '../../../components/agree';
+import { HeaderBack } from '../../../components/layout/front/header';
 // css
 import { Container, KakaoLoginInner } from '../../../styles/account/signup';
 

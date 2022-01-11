@@ -1,8 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 // components
-import Coupon from '../../../components/coupon/Coupon';
-import { Button } from '../../../components/common/modal';
+import { CouponDetail } from '../../../components/detail';
+import { Button } from '../../../components/modal';
 // css
 import { Container, SignUpCompleteInner } from '../../../styles/account/signup';
 
@@ -20,9 +20,9 @@ const SignUpComplete = () => {
           <h2 className='complete-title'>
             회원가입 축하 쿠폰이 발급되었습니다.
           </h2>
-          <Coupon />
-          <Coupon />
-          <Coupon />
+          <CouponDetail />
+          <CouponDetail />
+          <CouponDetail />
 
           <Button
             kind="btn_02"

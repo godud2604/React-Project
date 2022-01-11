@@ -6,13 +6,11 @@ const initialState = {
   },
   saveUrlState: false,
   saveUrl: '',
-  device: '',
   authStatus: {
     isLogIn: false,
     saveId: '',
     userId: '',
     userAuth: '',
-    cmsState: 0,
     userInfo: [{ data: { token: null } }],
   },
 };
@@ -101,16 +99,6 @@ export default function auth(state = initialState, action) {
           userId: action.userId,
           userAuth: action.userAuth,
           userInfo: action.userInfo,
-        },
-      };
-
-    // CMS 얼럿 상태
-    case types.SET_CMS_STATE:
-      return {
-        ...state,
-        authStatus: {
-          ...state.authStatus,
-          cmsState: action.cmsState,
         },
       };
     /* 로그인전 페이지 확인 */

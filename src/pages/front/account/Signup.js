@@ -1,8 +1,8 @@
 import React from 'react';
 // components
-import Agree from '../../../components/account/Agree';
-import HeaderBack from '../../../components/common/header/HeaderBack';
-import { Input, InputBtn } from '../../../components/common/input';
+import { Agree } from '../../../components/agree';
+import { HeaderBack } from '../../../components/layout/front/header';
+import { Input, InputBtn } from '../../../components/input';
 // css
 import { Container, SignUpInner } from '../../../styles/account/signup';
 

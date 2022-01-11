@@ -39,20 +39,6 @@ export function saveUrl(saveUrl) {
   };
 }
 
-export function saveUrlState(saveUrlState) {
-  return {
-    type: AUTH_SAVE_URL_STATE,
-    saveUrlState: saveUrlState,
-  };
-}
-
-export function saveDeviceAssort(device) {
-  return {
-    type: AUTH_SAVE_DEVICE_ASSORT,
-    device: device,
-  };
-}
-
 export function loginRequest(userName, userHpNo, device, ip, kakao) {
   
   return (dispatch) => {
@@ -110,13 +96,6 @@ export function adminLoginRequest(userId, userPw) {
 export function login() {
   return {
     type: AUTH_LOGIN,
-  };
-}
-
-export function setCmsState() {
-  return {
-    type: SET_CMS_STATE,
-    cmsState: 1,
   };
 }
 

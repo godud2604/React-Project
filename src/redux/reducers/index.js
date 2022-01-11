@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
 import auth from './auth';
+import sidebar from './side';
+
 // redux 새로고침시 저장
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage/session';
@@ -15,6 +17,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   auth,
+  sidebar,
 });
 
 export default persistReducer(persistConfig, rootReducer);

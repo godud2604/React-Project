@@ -1,9 +1,9 @@
 import React from 'react';
-import MainLayout from '../../../components/common/layout/front/MainLayout';
+import { MainLayout } from '../../../components/layout/front';
 
 const Gift = () => {
   return (
-    <MainLayout>
+    <MainLayout navBottom>
       선물
     </MainLayout>
   );
