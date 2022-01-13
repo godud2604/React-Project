@@ -2,6 +2,14 @@ import * as types from '../actions/SideTypes';
 
 const initialState = {
   isSideBar: false,
+
+  navStatus: {
+    isHome: true,
+    isOrder: false,
+    isGift: false,
+    isCoupon: false,
+    isMore: false,
+  }
 };
 
 export default function sidebar(state = initialState, action) {
@@ -11,6 +19,7 @@ export default function sidebar(state = initialState, action) {
         ...state,
         isSideBar: action.status,
       };
+
     default:
       return state;
   }

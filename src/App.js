@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ThemeProvider } from "styled-components";
@@ -24,8 +25,8 @@ const App = () => {
     if (storageData !== null) {
       dispatch(getStatusRequest());
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  
   return (
     <>
       <GlobalStyle />

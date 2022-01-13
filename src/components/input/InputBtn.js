@@ -18,6 +18,8 @@ const InputBtn = ({
   btnWd,
   btnHt,
 
+  onClick
+
 }) => {
   return (
     <GlobalInputBtn margin={margin}>
@@ -32,6 +34,7 @@ const InputBtn = ({
         children={btnTxt}
         width={btnWd}
         height={btnHt}
+        onClick={onClick}
       />
     </GlobalInputBtn>
   );

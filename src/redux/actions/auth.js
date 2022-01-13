@@ -6,8 +6,11 @@ import {
   AUTH_LOGIN_FAILURE,
   AUTH_LOGIN_SUCCESS,
   AUTH_SAVE_URL,
+  AUTH_SAVE_URL_STATE,
+  AUTH_SAVE_DEVICE_ASSORT,
   // AUTH_LOGOUT,
   ID_SAVE,
+  SET_CMS_STATE,
 } from './AuthTypes';
 
 import _axios from '../../utils/axios';

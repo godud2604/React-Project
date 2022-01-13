@@ -69,7 +69,6 @@ const Login = () => {
    
   useEffect(() => {
     loginStatus();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [auth.login.status]);
 
   const { userId, userPass } = state;

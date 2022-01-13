@@ -75,6 +75,7 @@ const boxShadows = {
 };
 
 
+// layout z-index
 // 10 단위로 지정하되, 예외 변수가 발생하면 1 단위 값 설정
 const zIndex = {
   header_nav_level: 30,

@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { animations } from "../../utils";
 import { flexbox, inlineFlexbox } from "../../utils/flexbox";
 import theme from "../../utils/theme";
 
@@ -10,6 +11,8 @@ export const Container = styled.section`
   padding: 100px 20px 20px;
   color: ${theme.colors.gray1};
   background-color: ${theme.colors.white};
+
+  overflow-y: auto;
 
   ${props => {
     // 더보기 환경설정, 내정보 페이지
@@ -121,4 +124,62 @@ export const InfoInner = styled.div`
       ${theme.SubTitle1};
     }
   }
+
+  .btn_02 {
+    margin: 0 0 5px 20px;
+  }
+
+  .sidebar-info-account {
+    margin-bottom: 20px;
+
+    &-title {
+      ${theme.SubTitle2};    
+      margin-bottom: 8px;
+    }
+
+    &-not {
+      ${theme.Body1};
+    }
+  }
+
+  .sidebar-info-kind {
+    ${flexbox('between')};
+
+    &-left {
+      ${flexbox()};
+      ${theme.Body1};
+
+      img {
+        margin-right: 10px;
+      }
+    }
+
+    &.first {
+      margin-bottom: 15px;
+    }
+  }
+
+  .sidebar-info-pay {
+    margin-bottom: 30px;
+
+    hr {
+      border: 1px solid ${theme.colors.gray6};
+    }
+
+    &-content {
+      ${flexbox('between')};
+      padding: 10px 5px;
+
+      p {
+        ${theme.SubTitle1};
+      }
+    }
+  }
+
+  .sidebar-info-out {
+    ${flexbox()};
+    ${theme.SubTitle1};
+  }
+
+ 
 `;

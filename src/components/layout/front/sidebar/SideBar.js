@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 // components
-import { Alert, Button } from '../../../modal';
+import { Alert } from '../../../modal';
 import { SideBarSetting, SideBarInfo } from './';
 // 개발자 라이브러리
-import { logoutRequest } from '../../../../redux/actions/auth';
 import { setSideTabStatus } from '../../../../redux/actions/side';
 // css
 import { Container } from '../../../../styles/components/layout/sidebar';
@@ -152,13 +151,6 @@ const SideBar = () => {
                 </li>
               </ul>
             </nav>
-
-            <Button
-              kind="btn_03"
-              children="(임시)로그아웃"
-              onClick={() => dispatch(logoutRequest())}
-              margin="30px 0 0 0"
-            />
           </Container>
         </React.Fragment>
       )}

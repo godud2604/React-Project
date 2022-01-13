@@ -15,6 +15,13 @@ function convertFullName(value) {
   }
 }
 
+
+// jc default : center
+// jc : center | start | end | between | around
+
+// ai default : center
+// ai : center | start | end | between | around
+
 export function flexbox(jc = 'center', ai = 'center' ) {
   return css`
     display: flex;
