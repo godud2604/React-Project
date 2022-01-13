@@ -10,6 +10,7 @@ import { Container, SearchInner } from '../../../styles/order/order';
 const OrderSearch = () => {
   const history = useHistory();
 
+  // eslint-disable-next-line no-unused-vars
   const [search, setSearch] = useState({
     searchDefault: true, // 기본
     searchNone: false, // 검색결과 없을 때

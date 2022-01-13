@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { animations } from "../../utils";
 import { flexbox, inlineFlexbox } from "../../utils/flexbox";
 import theme from "../../utils/theme";
 
