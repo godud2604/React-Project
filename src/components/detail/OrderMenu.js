@@ -1,7 +1,8 @@
 import React from 'react';
+// components
 import { Container } from '../../styles/components/detail/orderMenu';
 // images
-import store from '../../images/home/main-bg.jpg';
+import store from '../../images/home/home/main-bg.jpg';
 
 const OrderMenu = ({ onClick }) => {
   return (

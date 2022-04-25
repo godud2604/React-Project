@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { CouponDetail } from '../../../components/detail';
 import { MainLayout } from '../../../components/layout/front';
 import { SubNav } from '../../../components/layout/front/header';
@@ -6,13 +6,30 @@ import { SubNav } from '../../../components/layout/front/header';
 import { Container, CouponInner } from '../../../styles/coupon/coupon';
 
 const Coupon = () => {
+  const [toggleState, setToggleState] = useState(1);
+
+  const toggleTab = (index) => {
+    setToggleState(index);
+  };
+
+  const subNavInfo = [
+    {
+      "id": 1,
+      "title": '사용 가능 쿠폰',
+    },
+    {
+      "id": 2,
+      "title": '쿠폰히스토리',
+    },
+  ];
   return (
     <MainLayout navBottom headerBack backTitle="쿠폰">
       <Container>
         <CouponInner>
           <SubNav 
-            nav1="사용 가능 쿠폰"
-            nav2="쿠폰히스토리"
+            nav={subNavInfo}
+            toggleState={toggleState}
+            toggleTab={toggleTab}
           />
           
           <div className='coupon-list'>

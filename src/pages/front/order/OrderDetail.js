@@ -3,9 +3,9 @@ import React from 'react';
 import { MainLayout } from '../../../components/layout/front';
 import { Button } from '../../../components/modal';
 // css
-import { OrderDetailInner } from '../../../styles/order/order';
+import { OrderDetailInner } from '../../../styles/order/orderDetail';
 // images
-import store from '../../../images/home/main-bg.jpg';
+import store from '../../../images/home/home/main-bg.jpg';
 import { ReactComponent as Location } from '../../../images/common/icon-location.svg';
 import { ReactComponent as Minus } from '../../../images/common/btn-minus.svg';
 import { ReactComponent as Plus } from '../../../images/common/btn-plus.svg';

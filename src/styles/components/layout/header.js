@@ -87,7 +87,7 @@ export const SubNavContainer = styled.section`
         padding-bottom: 6px;
         ${theme.SubTitle1};
         font-weight: 600;
-        border-bottom: 3px solid ${theme.colors.orange};
+        border-bottom: ${(props) => props.btmColor ? `3px solid ${props.btmColor}` : `3px solid ${theme.colors.orange}`};
       }
 
       &:not(:last-child) {

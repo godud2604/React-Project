@@ -179,6 +179,4 @@ export const InfoInner = styled.div`
     ${flexbox()};
     ${theme.SubTitle1};
   }
-
- 
 `;

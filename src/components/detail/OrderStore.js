@@ -2,7 +2,7 @@ import React from 'react';
 // css
 import { Container } from '../../styles/components/detail/orderStore';
 // images
-import store from '../../images/home/main-bg.jpg';
+import store from '../../images/home/home/main-bg.jpg';
 
 const OrderStore = ({ onClick }) => {
   return (

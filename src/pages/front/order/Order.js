@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 // components
 import { MainLayout } from '../../../components/layout/front';
 import { SubNav } from '../../../components/layout/front/header';
-import { OrderMenu } from '../../../components/detail';
+import { OrderMenu, OrderStore } from '../../../components/detail';
 // 개발자 라이브러리
 import theme from '../../../styles/utils/theme';
 // css
@@ -15,6 +15,22 @@ import { ReactComponent as Bag } from '../../../images/common/icon-shopping-bag.
 
 const Order = () => {
   const history = useHistory();
+  const [toggleState, setToggleState] = useState(1);
+
+  const toggleTab = (index) => {
+    setToggleState(index);
+  };
+
+  const subNavInfo = [
+    {
+      "id": 1,
+      "title": '전체 매장',
+    },
+    {
+      "id": 2,
+      "title": '자주 찾는 매장',
+    },
+  ];
 
   return (
     <MainLayout navBottom>
@@ -28,23 +44,34 @@ const Order = () => {
           </div>
 
           <SubNav 
-            nav1="전체 매장"
-            nav2="자주 찾는 매장"
+            nav={subNavInfo}
+            toggleState={toggleState}
+            toggleTab={toggleTab}
           />
 
-          <nav className='order-nav'>
-            <ul className='nav-list'>
-              <li className='nav-item is-active'>음료 </li>
-              <li className='nav-item'>푸드</li>
-              <li className='nav-item'>식품</li>
-            </ul>
-          </nav>
+          <div className={toggleState === 1 ? "content active-content" : "content"}>
+            <nav className='order-nav'>
+              <ul className='nav-list'>
+                <li className='nav-item is-active'>음료 </li>
+                <li className='nav-item'>푸드</li>
+                <li className='nav-item'>식품</li>
+              </ul>
+            </nav>
 
-          <div className='order-list'>
-            <OrderMenu onClick={() => history.push('/detail')}/>
-            <OrderMenu />
-            <OrderMenu />
-            <OrderMenu />
+            <div className='order-list'>
+              <OrderMenu onClick={() => history.push('/detail')}/>
+              <OrderMenu />
+              <OrderMenu />
+              <OrderMenu />
+            </div>
+          </div>
+
+          <div className={toggleState === 2 ? "content active-content" : "content"}>
+            <div className='store-list'>
+              <OrderStore className='store-item'/>
+              <OrderStore className='store-item'/>
+              <OrderStore className='store-item'/>
+            </div>
           </div>
 
           <div className='order-bottom-store-select' onClick={() => history.push('/store')}>

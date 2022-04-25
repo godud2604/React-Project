@@ -1,16 +1,17 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { OrderMenu } from '../../../components/detail';
 // components
-import Search from '../../../components/input/Search';
+import { SearchBtn } from '../../../components/input';
 import { MainLayout } from '../../../components/layout/front';
 // css
-import { Container, SearchInner } from '../../../styles/order/order';
+import { Container } from '../../../styles/order/order';
+import { SearchInner } from '../../../styles/order/orderSearch';
 
 const OrderSearch = () => {
   const history = useHistory();
 
-  // eslint-disable-next-line no-unused-vars
   const [search, setSearch] = useState({
     searchDefault: true, // 기본
     searchNone: false, // 검색결과 없을 때
@@ -26,7 +27,7 @@ const OrderSearch = () => {
         >
           <Container>
             <SearchInner>
-              <Search searchBtn />
+              <SearchBtn searchBtn />
               <div className='order-search-none'>
                 <span>최근 검색어가 없습니다.</span>
               </div>
@@ -59,7 +60,7 @@ const OrderSearch = () => {
         <MainLayout>
           <Container>
             <SearchInner>
-              <Search searchBtn />
+              <SearchBtn searchBtn />
               <div className='order-search-none'>
                 <span>최근 검색어가 없습니다.</span>
               </div>

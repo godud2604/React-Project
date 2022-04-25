@@ -31,7 +31,7 @@ const Agree = ({ txt1, txt2 }) => {
 
         <div className='agree-content agree-sub'>
           <div className='agree-img'>
-            <CheckOn />
+            <CheckOn fill={`${theme.colors.orange}`} />
           </div>
           <span className='agree-sub-txt'>(필수)드림컨시어지 이용약관</span>
         </div>

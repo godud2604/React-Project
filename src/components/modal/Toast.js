@@ -10,15 +10,18 @@ import { ReactComponent as Close } from '../../images/common/btn-close.svg';
 const Toast = ({ 
   className, 
   title,
+  btnKind,
+  btnTxt,
+  btnImgSrc,
   
   children,
 
-  bgClick, 
   closeClick, 
   btnClick 
+
 }) => {
   return (
-    <GlobalToast className={className} onClick={bgClick}>
+    <GlobalToast className={className}>
       <div className='global-toast-inner'>
         <div className='toast-head'>
           <div className='svg' onClick={closeClick}>
@@ -33,9 +36,10 @@ const Toast = ({
 
         <div className='toast-footer'>
           <Button 
-            kind="btn_03"
-            children="저장"
+            kind={btnKind ?? 'btn_03'}
+            children={btnTxt ?? '저장'}
             onClick={btnClick}
+            imgSrc={btnImgSrc}
           />
         </div>
       </div>

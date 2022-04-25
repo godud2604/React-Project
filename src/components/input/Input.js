@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 // 개발자 라이브러리
 import theme from '../../styles/utils/theme';
 // css
@@ -9,7 +9,7 @@ import { ReactComponent as Success } from '../../images/common/check-success.svg
 import { ReactComponent as Search } from '../../images/common/btn-search.svg';
 
 
-const Input = ({
+const Input = forwardRef(({
   type,
   name,
   value,
@@ -17,7 +17,6 @@ const Input = ({
 
   onClick,
   onChange,
-  ref,
   readOnly,
   required,
   maxLength,
@@ -35,9 +34,13 @@ const Input = ({
   height,
   margin,
   padding,
+  cursorColor, 
+
+  focusBorder,
   border,
   borderRadius,
-}) => {
+}, ref) => {
+
   return (
     <GlobalInput 
       className={kind ? kind : 'global-input-01'}
@@ -46,6 +49,9 @@ const Input = ({
       width={width}
       height={height}
       padding={padding}
+      cursorColor={cursorColor}
+
+      focusBorder={focusBorder}
       border={border}
     >
       <label className='global-input-title'>{title}</label>
@@ -59,7 +65,7 @@ const Input = ({
 
           onClick={onClick}
           ref={ref}
-          readOnly={readOnly}
+          readOnly={readOnly ? readOnly : false}
           required={required ? required : true}
           placeholder={placeholder}
           maxLength={maxLength}
@@ -102,7 +108,7 @@ const Input = ({
       {errorMessage && <span className='error-message message'>{errorMessage}</span>}
     </GlobalInput>
   );
-};
+});
 
 
 export default Input;

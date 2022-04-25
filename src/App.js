@@ -15,11 +15,10 @@ import "swiper/css";
 import "swiper/css/pagination"
 import "swiper/css/navigation"
 
-
 const App = () => {
   const dispatch = useDispatch();
   const storageData = localStorage.getItem('user');
-  const SIDEBAR_STATUS = useSelector((store) => store.sidebar.isSideBar);
+  const SIDEBAR_STATUS = useSelector((store) => store.sidebar.isSideBar); // 더보기 sidebar 
 
   useEffect(() => {
     if (storageData !== null) {
@@ -31,7 +30,7 @@ const App = () => {
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        {SIDEBAR_STATUS && (
+        {SIDEBAR_STATUS && (  // 더보기 sidebar
           <React.Fragment>
             <SideBar />
           </React.Fragment>

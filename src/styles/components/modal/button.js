@@ -94,4 +94,18 @@ export const GlobalButton = styled.button`
     color: ${({ theme }) => theme.colors.gray2};
     border: 0;
   }
+
+  // 배경: white, 색상: pink1, border: pink
+  &.btn_08 {
+    background-color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.pink1};
+    border: 1px solid ${({ theme }) => theme.colors.pink1};
+    font-family: "NotoM";
+  }
+
+  &.btn_09 {
+    background-color: ${({ theme }) => theme.colors.pink1};
+    color: ${({ theme }) => theme.colors.white};
+    border: 0;
+  }
 `;

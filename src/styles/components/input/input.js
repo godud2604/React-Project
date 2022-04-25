@@ -29,8 +29,8 @@ export const GlobalInput = styled.div`
     border-radius: ${(props) => props.radious ? props.radious : '4px'};
 
     :focus {
-      caret-color: ${theme.colors.orange}; // caret(input cursor) 색상 변경
-      border: 1px solid ${theme.colors.orange};
+      caret-color: ${(props) => props.cursorColor ? props.cursorColor : `${theme.colors.orange}`}; // caret(input cursor) 색상 변경
+      border: ${(props) => props.focusBorder ? props.focusBorder : `1px solid ${theme.colors.orange}`};
     }
 
     ::placeholder {

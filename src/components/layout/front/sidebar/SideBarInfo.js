@@ -119,7 +119,6 @@ const SideBarInfo = ({ state, setState }) => {
 
         {toast.name && (
           <Toast
-            bgClick={() => setToast({ ...toast, name: false })}
             closeClick={(e) => {
               e.stopPropagation();
               setToast({ ...toast, name: false });
@@ -135,7 +134,6 @@ const SideBarInfo = ({ state, setState }) => {
 
         {toast.password && (
           <Toast 
-            bgClick={() => setToast({ ...toast, password: false })}
             closeClick={(e) => {
               e.stopPropagation();
               setToast({ ...toast, password: false });

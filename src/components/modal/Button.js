@@ -1,7 +1,8 @@
 import React from 'react';
+// css
 import { GlobalButton } from '../../styles/components/modal/button';
 
-const CommonButton = ({
+const Button = ({
   width,
   height,
   margin,
@@ -13,16 +14,16 @@ const CommonButton = ({
   children,
   onClick,
   disabled,
-  RefButton,
+  ref,
   imgSrc,
   borderRadious,
   backgroundColor,
-}) => {
+}) => {  
   return (
     <GlobalButton
       className={kind}
-      type={type}
-      ref={RefButton}
+      type={type ?? 'text'}
+      ref={ref}
       onClick={onClick}
       disabled={disabled}
 
@@ -34,9 +35,18 @@ const CommonButton = ({
       radious={borderRadious}
       backgroundcolor={backgroundColor}
     >
-      {imgSrc && 
+      {/* 일반적인 img 경로 */}
+      {typeof(imgSrc) === 'string' && 
         <div className='global-btn-img'>
           <img src={imgSrc} alt="버튼 이미지" />
+        </div>
+      }
+
+      {/* svg components 형태 */}
+      {/* ex) imgSrc={<Phone />} */}
+      {typeof(imgSrc) === 'object' && 
+        <div className='global-btn-img'>
+          {imgSrc}
         </div>
       }
       
@@ -45,4 +55,4 @@ const CommonButton = ({
   );
 };
 
-export default React.memo(CommonButton);
+export default React.memo(Button);

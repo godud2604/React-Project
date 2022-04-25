@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import mainBg from "../../images/home/main-bg.jpg";
-import scrollBg01 from "../../images/home/scroll-bg-01.jpg";
+import mainBg from "../../images/home/home/main-bg.jpg";
+import scrollBg01 from "../../images/home/home/scroll-bg-01.jpg";
 import theme from "../utils/theme";
 
-export const Container = styled.div`
+export const Container = styled.section`
 `
 
 export const MainSection = styled.div`
@@ -118,30 +118,6 @@ export const ScrollSection = styled.div`
     .sub-txt {
       ${theme.SubTitle1};
       font-weight: 700;
-    }
-  }
-
-
-  .home-slide-menu {
-    margin-top: 30px;
-
-    .menu-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-      padding: 0 10px;
-
-      h2 {
-        ${theme.H2}
-        color: ${theme.colors.black1};
-      }
-    }
-
-    .menu-image {
-      img {
-        width: 100%;
-      }
     }
   }
 `

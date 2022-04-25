@@ -17,41 +17,47 @@ const MainLayout = ({
   backArrowColor,
 
   navBottom, 
+  navPath,
+  navcolor,
+
   children, 
   loading 
 }) => {
   const auth = useSelector((store) => store.auth);
   const history = useHistory();
 
+  if ( !auth.authStatus.isLogIn ) {
+    return (
+      <Home 
+        logInModal
+        prevPathName={history.location.pathname} 
+      />
+    )
+  }
+
   return (
-    <>
-      { !auth.authStatus.isLogIn ? (
-        <>
-          <Home 
-            logInModal
-            prevPathName={history.location.pathname} 
-          />
-        </>
-      ) : (
-        <main>
-          {headerNav && (
-            <HeaderNav />
-          )}
-
-          {headerBack && (
-            <HeaderBack 
-              title={backTitle}
-              bg={backBg}
-              backArrowColor={backArrowColor}
-            />
-          )}
-
-          {children}
-
-          {navBottom && <NavBottom/>}
-        </main>
+    <main>
+      {headerNav && (
+        <HeaderNav />
       )}
-    </>
+
+      {headerBack && (
+        <HeaderBack 
+          backTitle={backTitle}
+          backBg={backBg}
+          backArrowColor={backArrowColor}
+        />
+      )}
+
+      {children}
+
+      {navBottom && (
+        <NavBottom
+          navPath={navPath}
+          navcolor={navcolor}
+        />
+      )}
+    </main>
   );
 };
 

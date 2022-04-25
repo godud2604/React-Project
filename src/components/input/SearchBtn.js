@@ -1,9 +1,11 @@
 import React from 'react';
+// components
 import { Input } from '.';
-import { GlobalSearch } from '../../styles/components/input/search';
 import { Button } from '../modal';
+// css
+import { GlobalSearch } from '../../styles/components/input/search';
 
-const Search = ({ searchBtn }) => {
+const SearchBtn = ({ searchBtn }) => {
   return (
     <GlobalSearch>
       <Input 
@@ -22,4 +24,4 @@ const Search = ({ searchBtn }) => {
   );
 };
 
-export default Search;
+export default SearchBtn;

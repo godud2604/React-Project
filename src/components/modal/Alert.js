@@ -21,7 +21,7 @@
 //*   />
 //* )}
 //*
-//* ===> bgClick 사용 시, onClick1과 onClick2에 버블링현상 방지 사용해주어야 합니다
+//* ===> bgClick 사용 시, onClick1과 onClick2에 버블링현상 방지 사용해주어야 합니다.
 // *********************************************************************************
 
 import React from 'react';
@@ -92,14 +92,14 @@ const Alert = ({
                 className='btn1' 
                 onClick={onClick1}
               >
-                {btnTxt1 ? btnTxt1 : '취소'}
+                {btnTxt1 ?? '취소'}
               </button>
               <button
                type="button"
                className="btn2" 
                onClick={onClick2}
               >
-                {btnTxt2 ? btnTxt2 : '확인'}
+                {btnTxt2 ?? '확인'}
               </button>
             </React.Fragment>
           )}
