@@ -3,7 +3,6 @@ import React from 'react';
 import { MainLayout } from '../../../components/layout/front';
 import Point from '../../../components/pages/home/member/Point';
 import { PointDetail } from '../../../components/detail';
-import { None } from '../../../components/modal';
 // css
 import { PointHistorySection } from '../../../styles/home/phoneHistory';
 
