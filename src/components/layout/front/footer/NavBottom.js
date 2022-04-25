@@ -23,6 +23,7 @@ const NavBottom = ({ navPath, navcolor }) => {
 
   const handleSideBarToggle = () => {
     dispatch(setSideTabStatus( !SIDEBAR_STATUS ));
+    console.log('test')
   };
   
   return (
