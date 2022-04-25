@@ -10,7 +10,6 @@ import { Container } from '../../../../styles/components/layout/footer';
 // images
 import { ReactComponent as Home } from '../../../../images/common/footer-home.svg';
 import { ReactComponent as Order } from '../../../../images/common/footer-coupon.svg';
-import { ReactComponent as Gift } from '../../../../images/common/footer-gift.svg';
 import { ReactComponent as Coupon } from '../../../../images/common/footer-order.svg';
 import { ReactComponent as More } from '../../../../images/common/footer-more.svg';
 
@@ -61,23 +60,6 @@ const NavBottom = ({ navPath, navcolor }) => {
         </div>
         <div className='footer-nav-txt'>주문</div>
       </NavLink>
-
-      {/* <NavLink
-        to='/gift' 
-        exact
-        activeClassName={ !SIDEBAR_STATUS ? "nav-active" : undefined }
-        className='footer-nav'
-        onClick={handleSideBarClose}
-      >
-        <div className="svg">
-          <Gift
-            width="20"
-            height="20"
-            fill={`${theme.colors.gray3}`}
-          />
-        </div>
-        <div className='footer-nav-txt'>선물</div>
-      </NavLink> */}
 
       <NavLink
         to='/coupon' 
