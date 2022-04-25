@@ -62,7 +62,7 @@ const NavBottom = ({ navPath, navcolor }) => {
         <div className='footer-nav-txt'>주문</div>
       </NavLink>
 
-      <NavLink
+      {/* <NavLink
         to='/gift' 
         exact
         activeClassName={ !SIDEBAR_STATUS ? "nav-active" : undefined }
@@ -77,7 +77,7 @@ const NavBottom = ({ navPath, navcolor }) => {
           />
         </div>
         <div className='footer-nav-txt'>선물</div>
-      </NavLink>
+      </NavLink> */}
 
       <NavLink
         to='/coupon' 
