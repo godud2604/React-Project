@@ -109,17 +109,15 @@ const Scroll = () => {
             })
             break;
           default:
-            console.log('not kind')
+            // console.log('not kind')
             break;
         }
       });
     };
 
     if (IndexRef.current) {
-      console.log(IndexRef.current.children);
+      // console.log(IndexRef.current.children);
 
-      // HTMLCollection 유사 배열이기 때문에, 배열 메서드 중 일부를 지원 안함. forEach나 .map 사용 불가
-      // 따라서 destucturing으로 배열에 다시 담아줬음
       [...IndexRef.current.children].map((node, i) => IndexClickEvent(node, i));
     }
 
