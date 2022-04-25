@@ -26,7 +26,7 @@ const MainLayout = ({
   const auth = useSelector((store) => store.auth);
   const history = useHistory();
 
-  if ( !auth.authStatus.isLogIn ) {
+  if ( auth.authStatus.isLogIn ) {
     return (
       <Home 
         logInModal
