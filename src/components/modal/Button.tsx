@@ -2,19 +2,35 @@ import React from 'react';
 // css
 import { GlobalButton } from '../../styles/components/modal/button';
 
-const Button = ({
+interface ButtonProps {
+  kind: string;
+  children: string;
+  width: string;
+
+  height?: string;
+  margin?: string;
+  padding?: string;
+  fontSize?: string;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
+  imgSrc?: string;
+  borderRadious?: string;
+  backgroundColor?: string;
+  onClick?: () => void;
+}
+
+const Button: React.FC<ButtonProps> = ({
   width,
   height,
   margin,
   padding,
   fontSize,
 
-  type,
+  type = 'button',
   kind,
   children,
   onClick,
   disabled,
-  ref,
   imgSrc,
   borderRadious,
   backgroundColor,
@@ -22,8 +38,7 @@ const Button = ({
   return (
     <GlobalButton
       className={kind}
-      type={type ?? 'text'}
-      ref={ref}
+      type={type}
       onClick={onClick}
       disabled={disabled}
 

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "jsx":"react",
+    "allowJs": true,
+    "target": "ES5",
+    "outDir": "./dist",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "lib": ["ES2015", "DOM", "DOM.Iterable"],
+    "typeRoots" : ["node_modules/@types", "src/types"]
+  },
+  "include": ["./src/**/*.ts"],
+  "exclude": ["node_modules", "dist"]
+}

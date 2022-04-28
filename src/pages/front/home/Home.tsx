@@ -6,14 +6,14 @@ import { useHistory } from 'react-router-dom';
 import { NavBottom } from '../../../components/layout/front/footer';
 import { Alert, Button } from '../../../components/modal';
 import { HeaderNav } from '../../../components/layout/front/header';
+import Scroll from '../../../components/pages/home/home/Scroll';
 // 개발자 라이브러리
+import SwiperSection from '../../../components/pages/home/home/SwiperSection';
 import { saveUrl } from '../../../redux/actions/auth';
 // css
 import { Container, MainSection } from '../../../styles/home/home';
 // images
 import bell from '../../../images/common/gray-bell.svg';
-import Scroll from '../../../components/pages/home/home/Scroll';
-import SwiperSection from '../../../components/pages/home/home/SwiperSection';
 
 const Home = ({ logInModal, prevPathName }) => {
   
